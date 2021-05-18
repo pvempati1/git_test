@@ -261,7 +261,7 @@ __root const u32 XPm_ConfigObject[] =
 
 	NODE_PCIE,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
-	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_1_MASK, /* IPI Mask */
+	0U, /* IPI Mask */
 
 	NODE_PCAP,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
@@ -601,7 +601,6 @@ __root const u32 XPm_ConfigObject[] =
 	/**********************************************************************/
 	/* GPO SECTION */
 	PM_CONFIG_GPO_SECTION_ID,		/* GPO Section ID */
-	PM_CONFIG_GPO1_BIT_2_MASK |
 	PM_CONFIG_GPO1_MIO_PIN_34_MAP |
 	PM_CONFIG_GPO1_MIO_PIN_35_MAP |
 	PM_CONFIG_GPO1_MIO_PIN_36_MAP |

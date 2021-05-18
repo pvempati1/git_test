@@ -5,7 +5,7 @@ PROCESSOR = psu_cortexa53_0
 LIBRARIES = ${PROCESSOR}/lib/libxil.a
 BSP_MAKEFILES := $(wildcard $(PROCESSOR)/libsrc/*/src/Makefile)
 SUBDIRS := $(patsubst %/Makefile, %, $(BSP_MAKEFILES))
-BSP_SEQUENTIAL_MAKEFILES := psu_cortexa53_0/libsrc/avbuf_v2_4/src/Makefile psu_cortexa53_0/libsrc/xilsecure_v4_3/src/Makefile psu_cortexa53_0/libsrc/xilpm_v3_2/src/Makefile psu_cortexa53_0/libsrc/dpdma_v1_3/src/Makefile
+BSP_SEQUENTIAL_MAKEFILES := psu_cortexa53_0/libsrc/xilsecure_v4_3/src/Makefile psu_cortexa53_0/libsrc/xilpm_v3_2/src/Makefile psu_cortexa53_0/libsrc/avbuf_v2_4/src/Makefile psu_cortexa53_0/libsrc/dpdma_v1_3/src/Makefile
 BSP_PARALLEL_MAKEFILES := $(filter-out $(BSP_SEQUENTIAL_MAKEFILES),$(BSP_MAKEFILES))
 SEQ_SUBDIRS := $(patsubst %/Makefile, %, $(BSP_SEQUENTIAL_MAKEFILES))
 PAR_SUBDIRS := $(patsubst %/Makefile, %, $(BSP_PARALLEL_MAKEFILES))
@@ -39,11 +39,11 @@ $(PROCESSOR)/lib/libxil.a: $(PROCESSOR)/lib/libxil_init.a
 
 %/make.include: $(if $(wildcard $(PROCESSOR)/lib/libxil_init.a),$(PROCESSOR)/lib/libxil.a,)
 	@echo "Running Make include in $(subst /make.include,,$@)"
-	$(MAKE) -C $(subst /make.include,,$@) -s include  "SHELL=$(SHELL)" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objects"
+	$(MAKE) -C $(subst /make.include,,$@) -s include  "SHELL=$(SHELL)" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
 
 %/make.libs: include
 	@echo "Running Make libs in $(subst /make.libs,,$@)"
-	$(MAKE) -C $(subst /make.libs,,$@) -s libs  "SHELL=$(SHELL)" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra -Os -flto -ffat-lto-objects"
+	$(MAKE) -C $(subst /make.libs,,$@) -s libs  "SHELL=$(SHELL)" "COMPILER=aarch64-none-elf-gcc" "ASSEMBLER=aarch64-none-elf-as" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
 
 %/make.clean: 
 	$(MAKE) -C $(subst /make.clean,,$@) -s clean 

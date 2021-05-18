@@ -31,27 +31,6 @@
  
  
 /******************************************************************/
-/* Definitions for driver CANPS */
-#define XPAR_XCANPS_NUM_INSTANCES 1
-
-/* Definitions for peripheral PS7_CAN_0 */
-#define XPAR_PS7_CAN_0_DEVICE_ID 0
-#define XPAR_PS7_CAN_0_BASEADDR 0xE0008000
-#define XPAR_PS7_CAN_0_HIGHADDR 0xE0008FFF
-#define XPAR_PS7_CAN_0_CAN_CLK_FREQ_HZ 23809523
-
-
-/******************************************************************/
-
-/* Canonical definitions for peripheral PS7_CAN_0 */
-#define XPAR_XCANPS_0_DEVICE_ID XPAR_PS7_CAN_0_DEVICE_ID
-#define XPAR_XCANPS_0_BASEADDR 0xE0008000
-#define XPAR_XCANPS_0_HIGHADDR 0xE0008FFF
-#define XPAR_XCANPS_0_CAN_CLK_FREQ_HZ 23809523
-
-
-/******************************************************************/
-
 
 /* Definitions for peripheral PS7_DDR_0 */
 #define XPAR_PS7_DDR_0_S_AXI_BASEADDR 0x00100000
@@ -216,7 +195,7 @@
 
 /* Definitions for peripheral PS7_QSPI_LINEAR_0 */
 #define XPAR_PS7_QSPI_LINEAR_0_S_AXI_BASEADDR 0xFC000000
-#define XPAR_PS7_QSPI_LINEAR_0_S_AXI_HIGHADDR 0xFCFFFFFF
+#define XPAR_PS7_QSPI_LINEAR_0_S_AXI_HIGHADDR 0xFDFFFFFF
 
 
 /* Definitions for peripheral PS7_RAM_0 */
@@ -290,8 +269,8 @@
 #define XPAR_PS7_QSPI_0_BASEADDR 0xE000D000
 #define XPAR_PS7_QSPI_0_HIGHADDR 0xE000DFFF
 #define XPAR_PS7_QSPI_0_QSPI_CLK_FREQ_HZ 200000000
-#define XPAR_PS7_QSPI_0_QSPI_MODE 0
-#define XPAR_PS7_QSPI_0_QSPI_BUS_WIDTH 2
+#define XPAR_PS7_QSPI_0_QSPI_MODE 2
+#define XPAR_PS7_QSPI_0_QSPI_BUS_WIDTH 3
 
 
 /******************************************************************/
@@ -301,8 +280,8 @@
 #define XPAR_XQSPIPS_0_BASEADDR 0xE000D000
 #define XPAR_XQSPIPS_0_HIGHADDR 0xE000DFFF
 #define XPAR_XQSPIPS_0_QSPI_CLK_FREQ_HZ 200000000
-#define XPAR_XQSPIPS_0_QSPI_MODE 0
-#define XPAR_XQSPIPS_0_QSPI_BUS_WIDTH 2
+#define XPAR_XQSPIPS_0_QSPI_MODE 2
+#define XPAR_XQSPIPS_0_QSPI_BUS_WIDTH 3
 
 
 /******************************************************************/
