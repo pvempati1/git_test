@@ -1,0 +1,101 @@
+{
+  "modelVersion": "1.0",
+  "projectName": "vadd",
+  "platform": "/proj/xbuilds/2021.2_daily_latest/internal_platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm",
+  "components": [
+    {
+      "name": "pl_kernel",
+      "type": "PL_KERNEL",
+      "configuration": {
+        "componentType": "PL_KERNEL",
+        "plKernels": [
+          {
+            "kernelName": "krnl_vadd",
+            "kernelSourceFiles": [
+              "pl_kernel/krnl_vadd.cpp"
+            ],
+            "cfgFiles": [
+              "pl_kernel/krnl_vadd-compile.cfg"
+            ]
+          }
+        ],
+        "userManagedKernels": [],
+        "vppCompilerConfigurations": [
+          {
+            "configId": "pl_kernel.default",
+            "symbols": [],
+            "includes": [
+              "common"
+            ],
+            "options": [],
+            "kernelOptions": {},
+            "buildDatafiles": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "hw_link",
+      "type": "HW_LINKER",
+      "configuration": {
+        "componentType": "HW_LINKER",
+        "containers": [
+          {
+            "name": "binary_container_1",
+            "kernels": {
+              "krnl_vadd": "pl_kernel"
+            },
+            "cfgFiles": [
+              "hw_link/binary_container_1-link.cfg"
+            ]
+          }
+        ],
+        "vppLinkerConfigurations": [
+          {
+            "configId": "hw_link.default",
+            "options": [],
+            "containerOptions": {},
+            "buildDatafiles": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "vadd",
+      "type": "HOST",
+      "configuration": {
+        "componentType": "HOST",
+        "hostToolchainConfigurations": [
+          {
+            "configId": "vadd.default",
+            "compilerSymbols": [],
+            "compilerIncludes": [
+              "common"
+            ],
+            "compilerOptions": [],
+            "linkerLibraries": [],
+            "linkerLibraryPaths": [],
+            "linkerOptions": []
+          }
+        ]
+      }
+    }
+  ],
+  "buildConfigurations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "supportedTargets": [
+        "SW_EMU",
+        "HARDWARE",
+        "HW_EMU"
+      ],
+      "componentConfigMap": {
+        "pl_kernel": "pl_kernel.default",
+        "hw_link": "hw_link.default",
+        "vadd": "vadd.default"
+      }
+    }
+  ],
+  "activeBuildConfigId": "default"
+}

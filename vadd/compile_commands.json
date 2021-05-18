@@ -1,0 +1,28 @@
+[
+  {
+    "directory": "/scratch/gittest/git_test/vadd/_ide/_build/vadd",
+    "command": "/tools/batonroot/rodin/devkits/lnx64/gcc-6.2.0/bin/g++ -DVITIS_MAJOR_VERSION\u003d2021 -DVITIS_MINOR_VERSION\u003d2 -DVITIS_PLATFORM\u003dxilinx_u200_xdma_201830_2 -DVITIS_VERSION\u003d2021.2 -D__USE_XOPEN2K8 -I/scratch/gittest/git_test/vadd/vadd/../common -I/proj/xbuilds/2021.2_daily_latest/installs/lin64/Vitis_HLS/2021.2/include -I/proj/xbuilds/XRT/master/202120.2.12.337/packages/x86_64/xrt-2.12.337_centos_7.8/opt/xilinx/xrt/include -g -std\u003dc++11 -o CMakeFiles/vadd.dir/vadd.cpp.o -c /scratch/gittest/git_test/vadd/vadd/vadd.cpp",
+    "file": "/scratch/gittest/git_test/vadd/vadd/vadd.cpp"
+  },
+  {
+    "directory": "/scratch/gittest/git_test/vadd/_ide/_build/pl_kernel",
+    "arguments": [
+      "/tools/batonroot/rodin/devkits/lnx64/gcc-6.2.0/bin/g++",
+      "--platform",
+      "/proj/xbuilds/2021.2_daily_latest/internal_platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm",
+      "--target",
+      "sw_emu",
+      "-I/scratch/gittest/git_test/vadd/common",
+      "-I/proj/xbuilds/2021.2_daily_latest/installs/lin64/Vitis_HLS/2021.2/include",
+      "--compile",
+      "/scratch/gittest/git_test/vadd/pl_kernel/krnl_vadd.cpp",
+      "--kernel",
+      "krnl_vadd",
+      "--config",
+      "/scratch/gittest/git_test/vadd/pl_kernel/krnl_vadd-compile.cfg",
+      "-o",
+      "krnl_vadd.xo"
+    ],
+    "file": "/scratch/gittest/git_test/vadd/pl_kernel/krnl_vadd.cpp"
+  }
+]
