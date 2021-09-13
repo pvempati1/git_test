@@ -1,0 +1,109 @@
+{
+  "modelVersion": "1.0",
+  "projectName": "partition_cyclicblock",
+  "platform": "/proj/xbuilds/2021.2_daily_latest/internal_platforms/xilinx_u200_gen3x16_xdma_1_202110_1/xilinx_u200_gen3x16_xdma_1_202110_1.xpfm",
+  "components": [
+    {
+      "name": "pl_kernel",
+      "type": "PL_KERNEL",
+      "configuration": {
+        "componentType": "PL_KERNEL",
+        "plKernels": [
+          {
+            "kernelName": "matmul_naive",
+            "kernelSourceFiles": [
+              "pl_kernel/src/matmul.cpp"
+            ],
+            "cfgFiles": [
+              "pl_kernel/matmul_naive-compile.cfg"
+            ]
+          },
+          {
+            "kernelName": "matmul_partition",
+            "kernelSourceFiles": [
+              "pl_kernel/src/matmul_partition.cpp"
+            ],
+            "cfgFiles": [
+              "pl_kernel/matmul_partition-compile.cfg"
+            ]
+          }
+        ],
+        "userManagedKernels": [],
+        "vppCompilerConfigurations": [
+          {
+            "configId": "pl_kernel.default",
+            "symbols": [],
+            "includes": [],
+            "options": [],
+            "kernelOptions": {},
+            "buildDatafiles": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "hw_link",
+      "type": "HW_LINKER",
+      "configuration": {
+        "componentType": "HW_LINKER",
+        "containers": [
+          {
+            "name": "matmul",
+            "kernels": {
+              "matmul_naive": "pl_kernel",
+              "matmul_partition": "pl_kernel"
+            },
+            "cfgFiles": [
+              "hw_link/matmul-link.cfg"
+            ]
+          }
+        ],
+        "vppLinkerConfigurations": [
+          {
+            "configId": "hw_link.default",
+            "options": [],
+            "containerOptions": {},
+            "buildDatafiles": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "partition_cyclicblock",
+      "type": "HOST",
+      "configuration": {
+        "componentType": "HOST",
+        "hostToolchainConfigurations": [
+          {
+            "configId": "partition_cyclicblock.default",
+            "compilerSymbols": [],
+            "compilerIncludes": [
+              "common/libs/common/includes/xcl2"
+            ],
+            "compilerOptions": [],
+            "linkerLibraries": [],
+            "linkerLibraryPaths": [],
+            "linkerOptions": []
+          }
+        ]
+      }
+    }
+  ],
+  "buildConfigurations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "supportedTargets": [
+        "HARDWARE",
+        "SW_EMU",
+        "HW_EMU"
+      ],
+      "componentConfigMap": {
+        "pl_kernel": "pl_kernel.default",
+        "hw_link": "hw_link.default",
+        "partition_cyclicblock": "partition_cyclicblock.default"
+      }
+    }
+  ],
+  "activeBuildConfigId": "default"
+}

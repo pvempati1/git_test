@@ -1,0 +1,52 @@
+[
+  {
+    "directory": "/scratch/gittest/git_test/partition_cyclicblock/_ide/_build/partition_cyclicblock",
+    "command": "/tools/batonroot/rodin/devkits/lnx64/gcc-6.2.0/bin/g++ -DVITIS_MAJOR_VERSION\u003d2021 -DVITIS_MINOR_VERSION\u003d2 -DVITIS_PLATFORM\u003dxilinx_u200_gen3x16_xdma_1_202110_1 -DVITIS_VERSION\u003d2021.2 -D__USE_XOPEN2K8 -I/scratch/gittest/git_test/partition_cyclicblock/partition_cyclicblock/../common/libs/common/includes/xcl2 -I/proj/xbuilds/SWIP/2021.2_0906_2312/installs/lin64/Vitis_HLS/2021.2/include -I/proj/xbuilds/XRT/master/202120.2.12.340/packages/x86_64/xrt-2.12.340_centos_7.8/opt/xilinx/xrt/include -g -std\u003dc++11 -o CMakeFiles/partition_cyclicblock.dir/src/host.cpp.o -c /scratch/gittest/git_test/partition_cyclicblock/partition_cyclicblock/src/host.cpp",
+    "file": "/scratch/gittest/git_test/partition_cyclicblock/partition_cyclicblock/src/host.cpp"
+  },
+  {
+    "directory": "/scratch/gittest/git_test/partition_cyclicblock/_ide/_build/partition_cyclicblock",
+    "command": "/tools/batonroot/rodin/devkits/lnx64/gcc-6.2.0/bin/g++ -DVITIS_MAJOR_VERSION\u003d2021 -DVITIS_MINOR_VERSION\u003d2 -DVITIS_PLATFORM\u003dxilinx_u200_gen3x16_xdma_1_202110_1 -DVITIS_VERSION\u003d2021.2 -D__USE_XOPEN2K8 -I/scratch/gittest/git_test/partition_cyclicblock/partition_cyclicblock/../common/libs/common/includes/xcl2 -I/proj/xbuilds/SWIP/2021.2_0906_2312/installs/lin64/Vitis_HLS/2021.2/include -I/proj/xbuilds/XRT/master/202120.2.12.340/packages/x86_64/xrt-2.12.340_centos_7.8/opt/xilinx/xrt/include -g -std\u003dc++11 -o CMakeFiles/partition_cyclicblock.dir/libs/common/includes/xcl2/xcl2.cpp.o -c /scratch/gittest/git_test/partition_cyclicblock/partition_cyclicblock/libs/common/includes/xcl2/xcl2.cpp",
+    "file": "/scratch/gittest/git_test/partition_cyclicblock/partition_cyclicblock/libs/common/includes/xcl2/xcl2.cpp"
+  },
+  {
+    "directory": "/scratch/gittest/git_test/partition_cyclicblock/_ide/_build/pl_kernel",
+    "arguments": [
+      "/tools/batonroot/rodin/devkits/lnx64/gcc-6.2.0/bin/g++",
+      "--platform",
+      "/proj/xbuilds/2021.2_daily_latest/internal_platforms/xilinx_u200_gen3x16_xdma_1_202110_1/xilinx_u200_gen3x16_xdma_1_202110_1.xpfm",
+      "--target",
+      "sw_emu",
+      "-I/proj/xbuilds/SWIP/2021.2_0906_2312/installs/lin64/Vitis_HLS/2021.2/include",
+      "--compile",
+      "/scratch/gittest/git_test/partition_cyclicblock/pl_kernel/src/matmul_partition.cpp",
+      "--kernel",
+      "matmul_partition",
+      "--config",
+      "/scratch/gittest/git_test/partition_cyclicblock/pl_kernel/matmul_partition-compile.cfg",
+      "-o",
+      "matmul_partition.xo"
+    ],
+    "file": "/scratch/gittest/git_test/partition_cyclicblock/pl_kernel/src/matmul_partition.cpp"
+  },
+  {
+    "directory": "/scratch/gittest/git_test/partition_cyclicblock/_ide/_build/pl_kernel",
+    "arguments": [
+      "/tools/batonroot/rodin/devkits/lnx64/gcc-6.2.0/bin/g++",
+      "--platform",
+      "/proj/xbuilds/2021.2_daily_latest/internal_platforms/xilinx_u200_gen3x16_xdma_1_202110_1/xilinx_u200_gen3x16_xdma_1_202110_1.xpfm",
+      "--target",
+      "sw_emu",
+      "-I/proj/xbuilds/SWIP/2021.2_0906_2312/installs/lin64/Vitis_HLS/2021.2/include",
+      "--compile",
+      "/scratch/gittest/git_test/partition_cyclicblock/pl_kernel/src/matmul.cpp",
+      "--kernel",
+      "matmul_naive",
+      "--config",
+      "/scratch/gittest/git_test/partition_cyclicblock/pl_kernel/matmul_naive-compile.cfg",
+      "-o",
+      "matmul_naive.xo"
+    ],
+    "file": "/scratch/gittest/git_test/partition_cyclicblock/pl_kernel/src/matmul.cpp"
+  }
+]
